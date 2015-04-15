@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.3" client="site" method="upgrade">
+	<name>Image Slider</name>
+	<author>Jeppe Stockmar</author>
+	<creationDate>15/04/2015</creationDate>
+	<copyright>Copyright (C) 2015 Stockmar. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@stockmar.dk</authorEmail>
+	<authorUrl>www.jeppestockmar.dk</authorUrl>
+	<version>1.0</version>
+	<description>		
+		<![CDATA[
+		<div>
+			<img src="../templates/stockmartemplate/img/stockmar-logo.png" />
+			<h1>Image Sider Module</h1>
+			<p>A very simple image slider module</p>
+			<p><img src="../modules/mod_img_slider/img/timeline_preview.png" /></p>
+		</div>	
+		<p>Created by <a href="http://www.stockmar.dk" target="_blank">Stockmar | stockmar.dk</a></p>
+		<p>v. 1.0</p>
+		]]>
+	</description>
+	<files>
+		<filename module="mod_img_slider">mod_img_slider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>README.md</filename>
+		<folder>css</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_img_slider.ini</language>
+		<language tag="en-GB">language/da-DK/da-DK.mod_img_slider.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_img_slider/css/style.css">
+ 				
+ 				<field name="text-options1" type="spacer" default="TimeLine box 1" label="&lt;b&gt;Time Line box 1&lt;/b&gt;" description="Text Settings" />
+
+ 				<field type="spacer" name="spacer1" hr="true" />
+				###### TIMELINE BOX 1 ######
+ 					
+ 					<field name="boxitem1" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_1_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position1" type="radio" class="btn-group btn-group-yesno" default="left" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title1" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon1" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start1" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end1" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url1" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text1" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+
+ 				<field type="spacer" name="spacer2" hr="true" />
+				###### TIMELINE BOX 2 ######
+
+ 					<field name="boxitem2" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_2_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position2" type="radio" class="btn-group btn-group-yesno" default="right" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title2" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon2" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start2" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end2" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url2" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text2" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+
+				<field type="spacer" name="spacer3" hr="true" />
+				###### TIMELINE BOX 3 ######
+
+ 					<field name="boxitem3" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_3_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position3" type="radio" class="btn-group btn-group-yesno" default="left" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title3" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon3" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start3" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end3" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url3" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text3" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+
+				<field type="spacer" name="spacer4" hr="true" />
+				###### TIMELINE BOX 4 ######
+
+ 					<field name="boxitem4" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_4_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position4" type="radio" class="btn-group btn-group-yesno" default="right" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title4" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon4" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start4" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end4" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url4" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text4" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+				
+				<field type="spacer" name="spacer5" hr="true" />
+				###### TIMELINE BOX 5 ######
+
+ 					<field name="boxitem5" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_5_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position5" type="radio" class="btn-group btn-group-yesno" default="left" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title5" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon5" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start5" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end5" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url5" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text5" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+
+				<field type="spacer" name="spacer6" hr="true" />
+				###### TIMELINE BOX 6 ######
+
+ 					<field name="boxitem6" type="radio" class="btn-group btn-group-yesno" default="1" label="TIMELINE_ACTIVATION_BOX_6_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="position6" type="radio" class="btn-group btn-group-yesno" default="right" label="TIMELINE_POSITION_LABLE" description="">
+						<option value="left">JGLOBAL_LEFT</option>
+						<option value="right">JGLOBAL_RIGHT</option>
+					</field>
+					<field name="timeline_title6" label="TIMELINE_TITLE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="icon6" type="list" default="fa fa-joomla" label="Select an icon" description="">
+					  	<option value="fa fa-joomla">Joomla</option>
+						<option value="fa fa-cube">Cube</option>
+						<option value="fa fa-university">University</option>
+						<option value="fa fa-mobile">Mobile</option>
+						<option value="fa fa-laptop">Laptop</option>
+						<option value="fa fa-video-camera">Video camera</option>
+						<option value="fa fa-lightbulb-o">Lightbulb</option> 
+						<option value="fa fa-user">User</option>
+						<option value="fa fa-users">Users</option>
+						<option value="fa fa-street-view">Street view</option>
+						<option value="fa fa-thumb-tack">Thumb-tack</option>
+						<option value="fa fa-heart">Heart</option>
+						<option value="fa fa-paw">Paw</option> 
+					</field>
+					<field name="date_start6" type="calendar" default="NOW" label="DATE_START" description="" format="%d-%m-%Y" />
+					<field name="date_end6" type="calendar" default="" label="DATE_END" description="" format="%d-%m-%Y" />
+					<field name="url6" label="URL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="" filter="string" size="30" />
+					<field name="timeline_text6" width="300" label="Text" description="Enter some description" buttons="true" hide="readmore,pagebreak" type="editor" heigth="100"    filter="safehtml"/>
+			</fieldset>
+			<fieldset name="Options">
+					<field name="font-awesome" type="radio" class="btn-group btn-group-yesno" default="0" label="FONTAWSOME_LABLE" description="">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field name="timeline_image_size" label="IMAGE_SIZE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="200" filter="string" size="10" maxlength="3"/>
+					<field name="date_format" type="list" default="" label="Show date format" description="">
+					  	<option value="TIMELINE_DATE_FORMAT_YEAR">TIMELINE_DATE_OPTION_1_LABLE</option>
+					  	<option value="TIMELINE_DATE_FORMAT_YEAR_MONTH">TIMELINE_DATE_OPTION_2_LABLE</option>
+					  	<option value="DATE_FORMAT_LC">TIMELINE_DATE_OPTION_3_LABLE</option>
+						<option value="DATE_FORMAT_LC2">TIMELINE_DATE_OPTION_4_LABLE</option>
+						<option value="DATE_FORMAT_LC3">TIMELINE_DATE_OPTION_5_LABLE</option>
+					</field>
+					<field name="iconbackground" type="color" default="#b000d6" label="background color for icon " description="" size="10" />
+					
+					<field name="iconcolor" type="color" default="#ffffff" label="color for icon " description="" size="10" />
+
+					<field name="verticaline" type="color" default="#ededde" label="background color vertical line" description="" size="10" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
