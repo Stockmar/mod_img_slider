@@ -21,6 +21,8 @@ class ModImgSliderHelper {
      */    
 
     function getData( $params ){
+
+
 	}
 }
 ?>

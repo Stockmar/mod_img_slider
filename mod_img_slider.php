@@ -19,6 +19,7 @@ defined('_JEXEC') or die;
 JHtml::_('jquery.framework');
 
 $doc =& JFactory::getDocument();
+$modulePath 		= 		JURI::base();
 // parms setup
 $dateFormat     			=       $params->get('date_format', '');
 $iconbackground             = 		$params->get('iconbackground');
@@ -29,36 +30,25 @@ $imageSize 				= 		$params->get( 'timeline_image_size' );
 
 // add the stylesheet
 $doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.css' );
-if ($fontawesome==1)$doc->addStylesheet( '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 
 // add the jquery
-$doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/timeline.js');
+$doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/lightslider.min.js');
 
 // TIMELINE DATES 
-$dateStart1    	=       $params->get('date_start1', '');
-if ($params->get('date_start1', '')){ $dateStart1 =  JHtml::date($dateStart1, ''.$dateFormat.'', false);}
-$dateEnd1    		=       $params->get('date_end1', '');
-if ($params->get('date_end1', '')){ $dateEnd1 =  JHtml::date($dateEnd1, ''.$dateFormat.'', false);}
-$dateStart2    	=       $params->get('date_start2', '');
-if ($params->get('date_start2', '')){ $dateStart2 =  JHtml::date($dateStart2, ''.$dateFormat.'', false);}
-$dateEnd2    		=       $params->get('date_end2', '');
-if ($params->get('date_end2', '')){ $dateEnd2 =  JHtml::date($dateEnd2, ''.$dateFormat.'', false);}
-$dateStart3    	=       $params->get('date_start3', '');
-if ($params->get('date_start3', '')){ $dateStart3 =  JHtml::date($dateStart3, ''.$dateFormat.'', false);}
-$dateEnd3    		=       $params->get('date_end3', '');
-if ($params->get('date_end3', '')){ $dateEnd3 =  JHtml::date($dateEnd3, ''.$dateFormat.'', false);}
-$dateStart4    	=       $params->get('date_start4', '');
-if ($params->get('date_start4', '')){ $dateStart4 =  JHtml::date($dateStart4, ''.$dateFormat.'', false);}
-$dateEnd4    		=       $params->get('date_end4', '');
-if ($params->get('date_end4', '')){ $dateEnd4 =  JHtml::date($dateEnd4, ''.$dateFormat.'', false);}
-$dateStart5    	=       $params->get('date_start5', '');
-if ($params->get('date_start5', '')){ $dateStart5 =  JHtml::date($dateStart5, ''.$dateFormat.'', false);}
-$dateEnd5    		=       $params->get('date_end5', '');
-if ($params->get('date_end5', '')){ $dateEnd5 =  JHtml::date($dateEnd5, ''.$dateFormat.'', false);}
-$dateStart6    	=       $params->get('date_start6', '');
-if ($params->get('date_start6', '')){ $dateStart6 =  JHtml::date($dateStart6, ''.$dateFormat.'', false);}
-$dateEnd6    		=       $params->get('date_end6', '');
-if ($params->get('date_end6', '')){ $dateEnd6 =  JHtml::date($dateEnd6, ''.$dateFormat.'', false);}
+$img_01    	=       $params->get('logo_file_01', '');
+if ($params->get('logo_file_01', '')){ JURI::base().$img_01;}
+
+$img_02    	=       $params->get('logo_file_02', '');
+if ($params->get('logo_file_02', '')){ JURI::base().$img_02;}
+
+$img_03    	=       $params->get('logo_file_03', '');
+if ($params->get('logo_file_03', '')){ JURI::base().$img_03;}
+
+$img_04    	=       $params->get('logo_file_04', '');
+if ($params->get('logo_file_04', '')){ JURI::base().$img_04;}
+
+
+
 
 // Add styles
 $style = '
@@ -82,7 +72,7 @@ $style = '
 $doc->addStyleDeclaration($style);
 
 
-$TimeLineItemsParms = ModImgSliderHelper::getData( $params );
+$colors = ModImgSliderHelper::getData( $params );
 require JModuleHelper::getLayoutPath('mod_img_slider', $params->get('layout', 'default'));
 
 ?>

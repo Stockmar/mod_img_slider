@@ -12,17 +12,32 @@
 
 defined('_JEXEC') or die;
 ?>
-    <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+    <ul id="ss-image-gallery" class="ss-gallery list-unstyled ss-cS-hidden">
+        <?php
+        $images = array($img_01, $img_02, $img_03, $img_04, $img_05, $img_06);
+        echo "<ul>";
+        foreach($images as $image) {
+            // if ($pos > 2 && $pos % 2 == 0) {
+            //     echo "</li>\n<li>";
+            // }
+            echo "<li><img src=".$modulePath.$image." /></li>";
+        }
+        echo "</ul>";
+        ?>
+
+
+        <?php echo $img_01; ?>
         <li> 
-            <img src="<?php echo $tpath; ?>/img/slider/1.jpg" />
+            <img src="<?php echo $img_02; ?>" />
+            <?php echo $value; ?>
+            
         </li>
         <li> 
-            <img src="<?php echo $tpath; ?>/img/slider/2.jpg" />
+            <img src="<?php echo $img_03; ?>" />
         </li>
         <li> 
-            <img src="<?php echo $tpath; ?>/img/slider/3.jpg" />
-        </li>
-        <li> 
-            <img src="<?php echo $tpath; ?>/img/slider/4.jpg" />
+            <img src="<?php echo $img_04; ?>" />
         </li>
     </ul>
+
+    hallo
