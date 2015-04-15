@@ -28,11 +28,11 @@ $fontawesome 				= 		$params->get( 'font-awesome' );
 $imageSize 				= 		$params->get( 'timeline_image_size' );
 
 // add the stylesheet
-$doc->addStylesheet( JURI::root(true) . '/modules/mod_timeline/css/style.css' );
+$doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.css' );
 if ($fontawesome==1)$doc->addStylesheet( '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 
 // add the jquery
-$doc->addScript( JURI::root(true) . '/modules/mod_timeline/js/timeline.js');
+$doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/timeline.js');
 
 // TIMELINE DATES 
 $dateStart1    	=       $params->get('date_start1', '');
@@ -82,7 +82,7 @@ $style = '
 $doc->addStyleDeclaration($style);
 
 
-$TimeLineItemsParms = ModTimelineHelper::getData( $params );
-require JModuleHelper::getLayoutPath('mod_timeline', $params->get('layout', 'default'));
+$TimeLineItemsParms = ModImgSliderHelper::getData( $params );
+require JModuleHelper::getLayoutPath('mod_img_slider', $params->get('layout', 'default'));
 
 ?>
