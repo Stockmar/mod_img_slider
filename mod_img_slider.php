@@ -38,10 +38,10 @@ $speed 			= 		$params->get('speed');
 $pause 			= 		$params->get('pause');
 $auto 			= 		$params->get('auto');
 $loop 			= 		$params->get('loop');
-$mode 		= 		$params->get('mode');
+$mode 			= 		$params->get('mode');
 $controls 		= 		$params->get('controls');
-$touch 		= 		$params->get('touch');
-$drag 		= 		$params->get('drag');
+$touch 			= 		$params->get('touch');
+$drag 			= 		$params->get('drag');
 
 // // GETTING IMG PARMS
 $imagelist = array( );
@@ -63,10 +63,12 @@ if (!empty($img_05)) {$imagelist["logo_file_05"] = "$imgpath"."$img_05";};
 $img_06 = $params->get('logo_file_06', '');
 if (!empty($img_06)) {$imagelist["logo_file_06"] = "$imgpath"."$img_06";};
 
+
+
 $doc->addStyleDeclaration( '
 
 .imgslider {
-    width:420px;
+    
 }
 ul {
     list-style: none outside none;
@@ -100,7 +102,6 @@ $doc->addScriptDeclaration('
 	            mode: "'.$mode.'",
 	            useCSS: true,
 
-	            
 	            speed:'.$speed.',//ms
 	            auto:'.$auto.',
 	            loop:'.$loop.',

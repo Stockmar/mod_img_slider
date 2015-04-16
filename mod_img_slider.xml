@@ -37,9 +37,9 @@
 	</languages>
 	<config>
 		<fields name="params">
-			<fieldset name="basic" addfieldpath="/modules/mod_img_slider/css/style.css">
+			<fieldset name="basic">
  				
- 				<field name="text-options1" type="spacer" default="TimeLine box 1" label="&lt;b&gt;Time Line box 1&lt;/b&gt;" description="Text Settings" />
+ 				<field name="text-options1" type="spacer" default="" label="Image Slider" description="Text Settings" />
 
 				<field name="logo_file_01" type="media" label="Select your image:"></field>
 				<field name="logo_file_02" type="media" label="Select your image:"></field>
@@ -47,9 +47,11 @@
 				<field name="logo_file_04" type="media" label="Select your image:"></field>
 				<field name="logo_file_05" type="media" label="Select your image:"></field>
 				<field name="logo_file_06" type="media" label="Select your image:"></field>
+			</fieldset>
+			<fieldset name="SETUP">
 				<field name="speed" type="text" default="1000" label="MOD_SPEED_LABEL" description="" size="4" />
 				<field name="pause" type="text" default="5000" label="MOD_PAUSE_LABEL" description="" size="4" />
-				<field name="mode" label="Mode" type="radio" default="fade" description="" class="radio btn-group">
+				<field name="mode" label="MOD_MODE_LABEL" type="radio" default="fade" description="" class="radio btn-group">
 					<option value="fade">Fade</option>
 				  	<option value="slide">slide</option>
 				</field>
@@ -73,22 +75,6 @@
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
 				</field>
-
-			</fieldset>
-			<fieldset name="Options">
-					<field name="timeline_image_size" label="IMAGE_SIZE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="200" filter="string" size="10" maxlength="3"/>
-					<field name="date_format" type="list" default="" label="Show date format" description="">
-					  	<option value="TIMELINE_DATE_FORMAT_YEAR">TIMELINE_DATE_OPTION_1_LABLE</option>
-					  	<option value="TIMELINE_DATE_FORMAT_YEAR_MONTH">TIMELINE_DATE_OPTION_2_LABLE</option>
-					  	<option value="DATE_FORMAT_LC">TIMELINE_DATE_OPTION_3_LABLE</option>
-						<option value="DATE_FORMAT_LC2">TIMELINE_DATE_OPTION_4_LABLE</option>
-						<option value="DATE_FORMAT_LC3">TIMELINE_DATE_OPTION_5_LABLE</option>
-					</field>
-					<field name="iconbackground" type="color" default="#b000d6" label="background color for icon " description="" size="10" />
-					
-					<field name="iconcolor" type="color" default="#ffffff" label="color for icon " description="" size="10" />
-
-					<field name="verticaline" type="color" default="#ededde" label="background color vertical line" description="" size="10" />
 			</fieldset>
 		</fields>
 	</config>
