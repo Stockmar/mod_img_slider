@@ -34,17 +34,24 @@ $doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.css' 
 // add the jquery
 $doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/jquery.bxslider.min.js');
 
-$speed 			= 		$params->get('speed');
-$pause 			= 		$params->get('pause');
-$marginWidth	= 		$params->get('marginWidth');
-$auto 			= 		$params->get('auto');
-$loop 			= 		$params->get('loop');
-$mode 			= 		$params->get('mode');
-$controls 		= 		$params->get('controls');
-$touch 			= 		$params->get('touch');
-$drag 			= 		$params->get('drag');
-$easing 		= 		$params->get('easing');
-$pager 			= 		$params->get('pager');
+$speed 				= 		$params->get('speed');
+$pause 				= 		$params->get('pause');
+$marginWidth		= 		$params->get('marginWidth');
+$auto 				= 		$params->get('auto');
+$autoHover 			= 		$params->get('autoHover');
+$loop 				= 		$params->get('loop');
+$mode 				= 		$params->get('mode');
+$controls 			= 		$params->get('controls');
+$touch 				= 		$params->get('touch');
+$drag 				= 		$params->get('drag');
+$easing 			= 		$params->get('easing');
+$pager 				= 		$params->get('pager');
+$carouselImg 		= 		$params->get('carouselImg');
+$carouselImgSlide 	= 		$params->get('carouselImgSlide');
+$carouselImgWidth 	= 		$params->get('carouselImgWidth');
+$controlsPosition 	= 		$params->get('controlsPosition');
+
+
 
 // // GETTING IMG PARMS
 $imagelist = array( );
@@ -77,11 +84,11 @@ $doc->addScriptDeclaration('
 		$(document).ready(function() {
 			$(document).ready(function(){  
 				$(\'.bxslider\').bxSlider({
-					mode: \''.$mode.'\',
-					speed: '.$speed.',
+					mode:\''.$mode.'\',
+					speed:'.$speed.',
 					slideMargin:'.$marginWidth.',
 					startSlide:0,
-					slideWidth: 200,
+					slideWidth:'.$carouselImgWidth.',
 					randomStart:0,
 					slideSelector:\'\',
 					infiniteLoop:\''.$loop.'\',
@@ -110,70 +117,28 @@ $doc->addScriptDeclaration('
 
 					nextSelector: \'#slider-next\',
   					prevSelector: \'#slider-prev\',
-  					nextText: \'Onward →\',
-  					prevText: \'← Go back\',
 
-
-					autoControls:true,
+					autoControls:false,
 					startText:\'Start\',
 					stopText:\'Stop\',
+
 					autoControlsCombine:false,
 
-					auto:true,
+					auto:\''.$auto.'\',
 					pause:\''.$pause.'\',
 					autoStart:\''.$auto.'\',
-					autoHover:false,
+					autoHover:\''.$autoHover.'\',
 					autoDelay:0,
 
-					minSlides:3,
-					maxSlides:3,
-					moveSlides:3,
+					minSlides:1,
+					maxSlides:'.$carouselImg.',
+					moveSlides:'.$carouselImgSlide.',
 				});
 			});
 
 		});
 	})(jQuery);
 ');
-
-			// $(\'#image-gallery\').lightSlider({
-				
-	  //           item: 1,
-	     
-	  //           slideMove: 1, // slidemove will be 1 if loop is true
-	  //           slideMargin: 10,
-
-	  //           mode: "'.$mode.'",
-	  //           useCSS: true,
-
-	  //           speed:'.$speed.',//ms
-	  //           auto:'.$auto.',
-	  //           loop:'.$loop.',
-	  //           slideEndAnimation: true,
-	  //           pause: '.$pause.',
-
-	  //           keyPress: true,
-	  //           controls:'.$controls.',
-
-	  //           vertical:false,
-	  //           verticalHeight:500,
-	  //           vThumbWidth:100,
-
-	  //           thumbItem:10,
-	  //           pager: true,
-	  //           gallery: false,
-	  //           galleryMargin: 5,
-	  //           thumbMargin: 5,
-	            
-
-	  //           enableTouch:'.$touch.',
-	  //           enableDrag:'.$drag.',
-	  //           freeMove:true,
-	  //           swipeThreshold: 40,
-	  //           onSliderLoad: function() {
-	  //               $(\'#image-gallery\').removeClass(\'cS-hidden\');
-	  //           }
-			// });
-
 
 // $imagelist = ModImgSliderHelper::getData( $params );
 // $colors = ModImgSliderHelper::getData( $params );

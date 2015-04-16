@@ -18,9 +18,15 @@ defined('_JEXEC') or die;
 	        }
 	        echo '</ul>';
         echo '</div>';
-?>
 
-<div class="outside">
-  <h3>This div is outside of the slider</h3>
-  <p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
-</div>
+	//format the display
+	if ($params->get('controlsPosition') == 'outside'){?>
+		<div class="outside">
+	  		<ul class="pager">
+		    	<li id="slider-prev" class="previous"></li>
+		    	<li id="slider-next" class="next"></li>
+		  	</ul>
+		</div>
+	<?php } ?>
+
+

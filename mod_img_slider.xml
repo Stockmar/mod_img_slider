@@ -61,6 +61,10 @@
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
 				</field>
+				<field name="autoHover" type="radio" class="btn-group btn-group-yesno" default="true" label="AUTO_HOVER_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
 				<field name="loop" type="radio" class="btn-group btn-group-yesno" default="true" label="LOOP_LABLE" description="">
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
@@ -89,6 +93,24 @@
 				<field name="pager" type="radio" class="btn-group btn-group-yesno" default="true" label="PAGER_LABLE" description="">
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
+				</field>
+				<field name="carouselImg" label="MOD_CAROUSEL_IMG_LABEL" type="radio" default="1" description="" class="radio btn-group">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</field>
+				<field name="carouselImgSlide" label="MOD_CAROUSEL_IMG_SLIDE_LABEL" type="radio" default="1" description="" class="radio btn-group">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</field>
+				<field name="carouselImgWidth" type="text" default="500" label="MOD_CAROUSEL_IMG_WIDTH_LABEL" description="" size="4" />
+				<field name="controlsPosition" type="radio" class="btn-group btn-group-yesno" default="inside" label="CONTROLS_POSITION_LABLE" description="">
+					<option value="inside">Inside</option>
+					<option value="outside">Outside</option>
 				</field>
 			</fieldset>
 		</fields>
