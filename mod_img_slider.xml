@@ -47,14 +47,35 @@
 				<field name="logo_file_04" type="media" label="Select your image:"></field>
 				<field name="logo_file_05" type="media" label="Select your image:"></field>
 				<field name="logo_file_06" type="media" label="Select your image:"></field>
-				<field name="logo_file_07" type="media" label="Select your image:"></field>
-		
+				<field name="speed" type="text" default="1000" label="MOD_SPEED_LABEL" description="" size="4" />
+				<field name="pause" type="text" default="5000" label="MOD_PAUSE_LABEL" description="" size="4" />
+				<field name="mode" label="Mode" type="radio" default="fade" description="" class="radio btn-group">
+					<option value="fade">Fade</option>
+				  	<option value="slide">slide</option>
+				</field>
+				<field name="auto" type="radio" class="btn-group btn-group-yesno" default="true" label="AUTO_START_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+				<field name="loop" type="radio" class="btn-group btn-group-yesno" default="true" label="LOOP_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+				<field name="controls" type="radio" class="btn-group btn-group-yesno" default="true" label="CONTROLS_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+				<field name="touch" type="radio" class="btn-group btn-group-yesno" default="true" label="ENABLE_TOUCH_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+				<field name="drag" type="radio" class="btn-group btn-group-yesno" default="true" label="ENABLE_DRAG_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+
 			</fieldset>
 			<fieldset name="Options">
-					<field name="font-awesome" type="radio" class="btn-group btn-group-yesno" default="0" label="FONTAWSOME_LABLE" description="">
-						<option value="1">JYES</option>
-						<option value="0">JNO</option>
-					</field>
 					<field name="timeline_image_size" label="IMAGE_SIZE_LABEL" description="JFIELD_ALT_PAGE_TITLE_LABEL" type="text" default="200" filter="string" size="10" maxlength="3"/>
 					<field name="date_format" type="list" default="" label="Show date format" description="">
 					  	<option value="TIMELINE_DATE_FORMAT_YEAR">TIMELINE_DATE_OPTION_1_LABLE</option>
