@@ -32,16 +32,19 @@ $imageSize 			= 		$params->get( 'timeline_image_size' );
 $doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.css' );
 
 // add the jquery
-$doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/lightslider.min.js');
+$doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/jquery.bxslider.min.js');
 
 $speed 			= 		$params->get('speed');
 $pause 			= 		$params->get('pause');
+$marginWidth	= 		$params->get('marginWidth');
 $auto 			= 		$params->get('auto');
 $loop 			= 		$params->get('loop');
 $mode 			= 		$params->get('mode');
 $controls 		= 		$params->get('controls');
 $touch 			= 		$params->get('touch');
 $drag 			= 		$params->get('drag');
+$easing 		= 		$params->get('easing');
+$pager 			= 		$params->get('pager');
 
 // // GETTING IMG PARMS
 $imagelist = array( );
@@ -66,73 +69,111 @@ if (!empty($img_06)) {$imagelist["logo_file_06"] = "$imgpath"."$img_06";};
 
 
 $doc->addStyleDeclaration( '
-
-.imgslider {
-    
-}
-ul {
-    list-style: none outside none;
-    padding-left: 0;
-    margin-bottom:0;
-}
-li {
-    display: block;
-    float: left;
-    margin-right: 6px;
-    cursor:pointer;
-}
-img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
 ');
 
 
 $doc->addScriptDeclaration('
 	(function($) {
 		$(document).ready(function() {
-			$(\'#image-gallery\').lightSlider({
-				
-	            item: 1,
-	     
-	            slideMove: 1, // slidemove will be 1 if loop is true
-	            slideMargin: 10,
+			$(document).ready(function(){  
+				$(\'.bxslider\').bxSlider({
+					mode: \''.$mode.'\',
+					speed: '.$speed.',
+					slideMargin:'.$marginWidth.',
+					startSlide:0,
+					slideWidth: 200,
+					randomStart:0,
+					slideSelector:\'\',
+					infiniteLoop:\''.$loop.'\',
+					hideControlOnEnd:false,
+					easing:\''.$easing.'\',
+					captions:false,
+					ticker:false,
+					tickerHover:true,
+					adaptiveHeight:false,
+					adaptiveHeightSpeed:false,
+					video:false,
+					responsive:true,
+					useCSS:true,
+					preloadImages:\'visible\', //all
+					touchEnabled:'.$touch.',
+					swipeThreshold:50,
+					oneToOneTouch:true,
+					preventDefaultSwipeX:true,
+					preventDefaultSwipeY:false,
 
-	            mode: "'.$mode.'",
-	            useCSS: true,
+					pager:'.$pager.',
 
-	            speed:'.$speed.',//ms
-	            auto:'.$auto.',
-	            loop:'.$loop.',
-	            slideEndAnimation: true,
-	            pause: '.$pause.',
+					controls:true,
+					nextText:\'Next\',
+					prevText:\'Prev\',
 
-	            keyPress: true,
-	            controls:'.$controls.',
+					nextSelector: \'#slider-next\',
+  					prevSelector: \'#slider-prev\',
+  					nextText: \'Onward →\',
+  					prevText: \'← Go back\',
 
-	            vertical:false,
-	            verticalHeight:500,
-	            vThumbWidth:100,
 
-	            thumbItem:10,
-	            pager: true,
-	            gallery: false,
-	            galleryMargin: 5,
-	            thumbMargin: 5,
-	            
+					autoControls:true,
+					startText:\'Start\',
+					stopText:\'Stop\',
+					autoControlsCombine:false,
 
-	            enableTouch:'.$touch.',
-	            enableDrag:'.$drag.',
-	            freeMove:true,
-	            swipeThreshold: 40,
-	            onSliderLoad: function() {
-	                $(\'#image-gallery\').removeClass(\'cS-hidden\');
-	            }
+					auto:true,
+					pause:\''.$pause.'\',
+					autoStart:\''.$auto.'\',
+					autoHover:false,
+					autoDelay:0,
+
+					minSlides:3,
+					maxSlides:3,
+					moveSlides:3,
+				});
 			});
+
 		});
 	})(jQuery);
 ');
+
+			// $(\'#image-gallery\').lightSlider({
+				
+	  //           item: 1,
+	     
+	  //           slideMove: 1, // slidemove will be 1 if loop is true
+	  //           slideMargin: 10,
+
+	  //           mode: "'.$mode.'",
+	  //           useCSS: true,
+
+	  //           speed:'.$speed.',//ms
+	  //           auto:'.$auto.',
+	  //           loop:'.$loop.',
+	  //           slideEndAnimation: true,
+	  //           pause: '.$pause.',
+
+	  //           keyPress: true,
+	  //           controls:'.$controls.',
+
+	  //           vertical:false,
+	  //           verticalHeight:500,
+	  //           vThumbWidth:100,
+
+	  //           thumbItem:10,
+	  //           pager: true,
+	  //           gallery: false,
+	  //           galleryMargin: 5,
+	  //           thumbMargin: 5,
+	            
+
+	  //           enableTouch:'.$touch.',
+	  //           enableDrag:'.$drag.',
+	  //           freeMove:true,
+	  //           swipeThreshold: 40,
+	  //           onSliderLoad: function() {
+	  //               $(\'#image-gallery\').removeClass(\'cS-hidden\');
+	  //           }
+			// });
+
 
 // $imagelist = ModImgSliderHelper::getData( $params );
 // $colors = ModImgSliderHelper::getData( $params );

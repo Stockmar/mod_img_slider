@@ -12,10 +12,15 @@
 defined('_JEXEC') or die;
         $images = $imagelist;
         echo '<div class="imgslider">';
-	        echo '<ul id="image-gallery" class="gallery list-unstyled cS-hidden">';
+	        echo '<ul class="bxslider">';
 	        foreach($images as $image) {
 	            echo "<li><img src=".$image." /></li>";
 	        }
 	        echo '</ul>';
         echo '</div>';
 ?>
+
+<div class="outside">
+  <h3>This div is outside of the slider</h3>
+  <p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+</div>

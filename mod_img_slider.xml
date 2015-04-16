@@ -51,9 +51,11 @@
 			<fieldset name="SETUP">
 				<field name="speed" type="text" default="1000" label="MOD_SPEED_LABEL" description="" size="4" />
 				<field name="pause" type="text" default="5000" label="MOD_PAUSE_LABEL" description="" size="4" />
-				<field name="mode" label="MOD_MODE_LABEL" type="radio" default="fade" description="" class="radio btn-group">
+				<field name="marginWidth" type="text" default="0" label="MOD_MARGIN_WIDTH_LABEL" description="" size="4" />
+				<field name="mode" label="MOD_MODE_LABEL" type="radio" default="horizontal" description="" class="radio btn-group">
+					<option value="horizontal">Horizontal</option>
+					<option value="vertical">Vertical</option>
 					<option value="fade">Fade</option>
-				  	<option value="slide">slide</option>
 				</field>
 				<field name="auto" type="radio" class="btn-group btn-group-yesno" default="true" label="AUTO_START_LABLE" description="">
 					<option value="true">JTRUE</option>
@@ -72,6 +74,19 @@
 					<option value="false">JFALSE</option>
 				</field>
 				<field name="drag" type="radio" class="btn-group btn-group-yesno" default="true" label="ENABLE_DRAG_LABLE" description="">
+					<option value="true">JTRUE</option>
+					<option value="false">JFALSE</option>
+				</field>
+				<field name="easing" label="MOD_EASING_LABEL" type="radio" default="horizontal" description="" class="radio btn-group">
+					<option value="null">None</option>
+					<option value="linear">linear</option>
+					<option value="ease">ease</option>
+					<option value="ease-in">ease-in</option>
+					<option value="ease-out">ease-out</option>
+					<option value="ease-in-out">ease-in-out</option>
+					<option value="cubic-bezier(n,n,n,n)">cubic-bezier(n,n,n,n)</option>
+				</field>
+				<field name="pager" type="radio" class="btn-group btn-group-yesno" default="true" label="PAGER_LABLE" description="">
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
 				</field>
