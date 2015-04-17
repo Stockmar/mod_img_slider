@@ -43,7 +43,6 @@ $loop 				= 		$params->get('loop');
 $mode 				= 		$params->get('mode');
 $controls 			= 		$params->get('controls');
 $touch 				= 		$params->get('touch');
-$drag 				= 		$params->get('drag');
 $easing 			= 		$params->get('easing');
 $pager 				= 		$params->get('pager');
 $carouselImg 		= 		$params->get('carouselImg');

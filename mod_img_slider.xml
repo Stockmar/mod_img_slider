@@ -77,10 +77,6 @@
 					<option value="true">JTRUE</option>
 					<option value="false">JFALSE</option>
 				</field>
-				<field name="drag" type="radio" class="btn-group btn-group-yesno" default="true" label="ENABLE_DRAG_LABLE" description="">
-					<option value="true">JTRUE</option>
-					<option value="false">JFALSE</option>
-				</field>
 				<field name="easing" label="MOD_EASING_LABEL" type="radio" default="horizontal" description="" class="radio btn-group">
 					<option value="null">None</option>
 					<option value="linear">linear</option>
