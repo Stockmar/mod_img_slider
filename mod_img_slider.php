@@ -29,7 +29,7 @@ $fontawesome 		= 		$params->get( 'font-awesome' );
 $imageSize 			= 		$params->get( 'timeline_image_size' );
 
 // add the stylesheet
-$doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.css' );
+$doc->addStylesheet( JURI::root(true) . '/modules/mod_img_slider/css/style.min.css' );
 
 // add the jquery
 $doc->addScript( JURI::root(true) . '/modules/mod_img_slider/js/jquery.bxslider.min.js');
