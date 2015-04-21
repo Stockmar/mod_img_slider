@@ -10,23 +10,28 @@
 * 
 */
 defined('_JEXEC') or die;
-        $images = $imagelist;
-        echo '<div class="imgslider">';
-	        echo '<ul class="bxslider">';
-	        foreach($images as $image) {
-	            echo "<li><img src=".$image." /></li>";
-	        }
-	        echo '</ul>';
-        echo '</div>';
+?>
+<ul class="actions">
+    <li class="edit-icon">
+        <?php echo JHtml::_('icon.edit', $item, $params); ?>
+    </li>
+</ul>
+<?php
+    $images = $imagelist;
+    echo '<div class="imgslider">';
+        echo '<ul class="bxslider">';
+        foreach($images as $image) {
+            echo "<li><img src=".$image." /></li>";
+        }
+        echo '</ul>';
+    echo '</div>';
 
-	//format the display
-	if ($params->get('controlsPosition') == 'outside'){?>
-		<div class="outside">
-	  		<ul class="pager">
-		    	<li id="slider-prev" class="previous"></li>
-		    	<li id="slider-next" class="next"></li>
-		  	</ul>
-		</div>
-	<?php } ?>
-
-
+//format the display
+if ($params->get('controlsPosition') == 'outside'){?>
+	<div class="outside">
+  		<ul class="pager">
+	    	<li id="slider-prev" class="previous"></li>
+	    	<li id="slider-next" class="next"></li>
+	  	</ul>
+	</div>
+<?php } ?>

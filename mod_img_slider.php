@@ -19,6 +19,8 @@ defined('_JEXEC') or die;
 JHtml::_('jquery.framework');
 
 $doc 				=& JFactory::getDocument();
+$user 				= JFactory::getUser();
+
 $imgpath 			= 		JURI::base();
 // parms setup
 $dateFormat     	=       $params->get('date_format', '');
